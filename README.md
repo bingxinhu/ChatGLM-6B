@@ -53,7 +53,9 @@ ChatGLM-6B 使用了和 ChatGPT 相似的技术，针对中文问答和对话进
 >>> response, history = model.chat(tokenizer, "晚上睡不着应该怎么办", history=history)
 >>> print(response)
 晚上睡不着可能会让你感到焦虑或不舒服,但以下是一些可以帮助你入睡的方法:
-
+int4版本请改下面两行
+>>> tokenizer = AutoTokenizer.from_pretrained("THUDM/chatglm-6b-int4", trust_remote_code=True)
+>>> model = AutoModel.from_pretrained("THUDM/chatglm-6b-int4", trust_remote_code=True).half().cuda()
 1. 制定规律的睡眠时间表:保持规律的睡眠时间表可以帮助你建立健康的睡眠习惯,使你更容易入睡。尽量在每天的相同时间上床,并在同一时间起床。
 2. 创造一个舒适的睡眠环境:确保睡眠环境舒适,安静,黑暗且温度适宜。可以使用舒适的床上用品,并保持房间通风。
 3. 放松身心:在睡前做些放松的活动,例如泡个热水澡,听些轻柔的音乐,阅读一些有趣的书籍等,有助于缓解紧张和焦虑,使你更容易入睡。
